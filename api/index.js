@@ -29,15 +29,7 @@ mongoose.connection.on("disconnected", () => {
 
 //Middleware
 
-app.use((req,res,next)=>{
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  if(req.method ==='OPTION'){
-      res.header("Access-Control-Allow-Methods", 'GET,POST,PUT,DELETE,PATCH');
-      return res.status(200).json({});
-  }
-  next();
-});
+
 
 app.use(cookieParser());
 app.use(express.json());
@@ -57,6 +49,16 @@ app.use((err, req, res, next) => {
     message: errorMessage,
     stack: err.stack,
   });
+});
+
+app.use((req,res,next)=>{
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  if(req.method ==='OPTION'){
+      res.header("Access-Control-Allow-Methods", 'GET,POST,PUT,DELETE,PATCH');
+      return res.status(200).json({});
+  }
+  next();
 });
 
 
