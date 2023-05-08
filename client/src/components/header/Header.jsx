@@ -221,7 +221,7 @@ const Header = ({ type }) => {
                 )}
               </div>
               {destination && <div className="headerSearchItem">
-                {destination != "Sélectionner" ? <button className="headerBtn" onClick={handleSearch}>
+                {destination !== "Sélectionner" ? <button className="headerBtn" onClick={handleSearch}>
                   Rechercher
                 </button> : ""}
               </div>}
