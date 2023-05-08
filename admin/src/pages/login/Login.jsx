@@ -22,15 +22,17 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post(
-        `/auth/login`,
-        credentials
-      );
+      const res = await axios.post(`${process.env.REACT_APP_BACKURL}/auth/login`, credentials);
       if (res.data.isAdmin) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-        navigate("/")
-      }else {
-        dispatch({ type: "LOGIN_FAILURE", payload:{message : "Vous devez être administrateur pour vous connecter !"} });
+        navigate("/");
+      } else {
+        dispatch({
+          type: "LOGIN_FAILURE",
+          payload: {
+            message: "Vous devez être administrateur pour vous connecter !",
+          },
+        });
       }
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
@@ -38,39 +40,44 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="lContainer">
-        {error && (
-          <span
-            style={{
-              backgroundColor: "rgb(255, 72, 72)",
-              padding: "5px 50px",
-              borderRadius: "10px",
-              color: "white",
-            }}
-          >
-            {error.message}
-          </span>
-        )}
-        <input
-          type="text"
-          placeholder="username"
-          id="username"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Se connecter
-        </button>
+    <>
+      <div>
+        <a href="http://louisbooking.netlify.app">Accueil</a>
       </div>
-    </div>
+      <div className="login">
+        <div className="lContainer">
+          {error && (
+            <span
+              style={{
+                backgroundColor: "rgb(255, 72, 72)",
+                padding: "5px 50px",
+                borderRadius: "10px",
+                color: "white",
+              }}
+            >
+              {error.message}
+            </span>
+          )}
+          <input
+            type="text"
+            placeholder="username"
+            id="username"
+            onChange={handleChange}
+            className="lInput"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            onChange={handleChange}
+            className="lInput"
+          />
+          <button disabled={loading} onClick={handleClick} className="lButton">
+            Se connecter
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

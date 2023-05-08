@@ -21,7 +21,7 @@ const Navbar = () => {
         </Link>
         {user ? (
           <div className="profile">
-            <a href="http://localhost:3001">
+            <a href="http://adminlouisbooking.netlify.app">
               <img
                 className="avatar"
                 src={

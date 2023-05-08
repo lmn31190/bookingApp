@@ -10,7 +10,7 @@ const Datatable = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState();
-  const { data, loading, error } = useFetch(`/${path}`);
+  const { data, loading, error } = useFetch(`${process.env.REACT_APP_BACKURL}/${path}`);
 
   const handleDelete = async (id) => {
     try {

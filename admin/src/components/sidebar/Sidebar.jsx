@@ -63,7 +63,9 @@ const Sidebar = () => {
           </Link>
           <li>
             <ExitToAppIcon className="icon" />
-            <span onClick={handleClick}>Déconnexion</span>
+            <a href="http://louisbooking.netlify.app">
+              <span onClick={handleClick}>Déconnexion</span>
+            </a>
           </li>
         </ul>
       </div>
