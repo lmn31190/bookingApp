@@ -16,7 +16,6 @@ import { format } from "date-fns";
 import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState();

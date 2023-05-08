@@ -1,8 +1,7 @@
 import "./register.scss";
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+
 
 const Register = ({ inputs, title }) => {
   const [file, setFile] = useState("");

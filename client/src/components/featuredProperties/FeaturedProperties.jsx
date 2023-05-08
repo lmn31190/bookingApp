@@ -2,7 +2,7 @@ import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch(
+  const { data, loading } = useFetch(
     `${process.env.REACT_APP_BACKURL}/hotels?featured=true`
   );
   return (

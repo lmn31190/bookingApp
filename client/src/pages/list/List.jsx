@@ -17,7 +17,7 @@ const List = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  const { data, loading, error, reFetch } = useFetch(
+  const { data, loading, reFetch } = useFetch(
     `${process.env.REACT_APP_BACKURL}/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
 

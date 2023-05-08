@@ -13,7 +13,7 @@ const Reserve = ({ setOpen, hotelId }) => {
 
   const navigate = useNavigate();
 
-  const { data, loading, error } = useFetch(
+  const { data } = useFetch(
     `${process.env.REACT_APP_BACKURL}/hotels/room/${hotelId}`
   );
   const { dates } = useContext(SearchContext);

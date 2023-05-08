@@ -24,7 +24,7 @@ const Hotel = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error } = useFetch(
+  const { data, loading } = useFetch(
     `${process.env.REACT_APP_BACKURL}/hotels/find/${id}`
   );
 
