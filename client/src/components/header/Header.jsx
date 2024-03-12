@@ -70,8 +70,6 @@ const Header = ({ type }) => {
       .then((val) => setOpts(val));
   }, []);
 
-  console.log(destination, "dest");
-
   return (
     <div className="header">
       <div
