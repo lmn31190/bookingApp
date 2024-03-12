@@ -1,6 +1,6 @@
 {
     "buildCommand" : "cd client && npm install && npm run build",
-    "outpoutDirectory" : "client/build",
+    "outputDirectory" : "client/build",
     "framework" : "react",
     "rewrites" : [
         {
