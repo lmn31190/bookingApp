@@ -118,7 +118,7 @@ const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <select className="select" onChange={(e) => setDestination(e.target.value)}>
                   <option>Sélectionner</option>
-                  {opts.map((opts, i) => (
+                  {opts?.map((opts, i) => (
                     <option>{opts.city}</option>
                   ))}
                 </select>

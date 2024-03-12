@@ -109,7 +109,7 @@ const Register = ({ inputs, title }) => {
                 />
               </div>
 
-              {inputs.map((input) => (
+              {inputs?.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
                   <input

@@ -102,7 +102,7 @@ const List = () => {
               "Chargement en cour, veuillez patienter..."
             ) : (
               <>
-                {data.map((item) => (
+                {data?.map((item) => (
                   <SearchItem item={item} key={item._id} />
                 ))}
               </>
